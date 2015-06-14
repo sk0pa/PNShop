@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SortingByNameAndPrice extends TestsSet {
+public class SortingByNameAndPriceTest extends TestSettings {
 
     SortingByNameAndPriceSteps sortSteps;
 

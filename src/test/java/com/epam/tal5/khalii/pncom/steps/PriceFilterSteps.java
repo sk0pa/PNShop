@@ -16,12 +16,11 @@ public class PriceFilterSteps {
     ProductCatalog catalog;
     MainPage mainPage;
 
-    public static final String MIN_PRICE_FILTER_12000 = "//div[contains(@class,'group')][1]//*[@class='is_empty_items']//a[contains(text(),'12')]";
-    public static final String MAX_PRICE_FILTER_27000 = "//div[contains(@class,'group')][2]//*[@class='is_empty_items']//a[contains(text(),'27')]";
+    public static final String MIN_PRICE_FILTER_12000 = "//div[contains(@class,'group')][1]//*[@class='is_empty_items']//a[contains(text(),'12000')]";
+    public static final String MAX_PRICE_FILTER_18000 = "//div[contains(@class,'group')][2]//*[@class='is_empty_items']//a[contains(text(),'18000')]";
     public static final String LAST_SEARCH_PAGE = "//*[@class='custom_pn_pager']//*[contains(@class,'last')]/a ";
     public static final String FIRST_PRODUCT_PRICE = "//div[@class='item'][1]/div[@class='price']/strong";
     public static final String LAST_PRODUCT_PRICE = "//div[@class='item'][2]/div[@class='price']/strong";
-    public static final String TITLE = "//*[@id='page-subheader']";
 
     public PriceFilterSteps(WebDriver driver)
     {
@@ -30,19 +29,19 @@ public class PriceFilterSteps {
 
     }
 
-    public PriceFilterSteps navigateToFridgeCatalog()
+    public PriceFilterSteps navigateToWasherCatalog()
     {
 
         mainPage.navigateTo("http://pn.com.ua/");
 
         assertThat(mainPage.getDriver().getTitle(), containsString("Прайс навигатор"));
 
-        catalog = mainPage.fridgeCategory();
+        catalog = mainPage.washerCategory();
 
-        Waiter.getByXpath(mainPage.getDriver(),
+        Waiter.waitForElementPresentsByXpath(mainPage.getDriver(),
                 MIN_PRICE_FILTER_12000);
 
-        assertThat(mainPage.getDriver().getTitle(), containsString("Холодильники"));
+        assertThat(mainPage.getDriver().getTitle(), containsString("Стиральные машины"));
 
         return this;
     }
@@ -56,13 +55,13 @@ public class PriceFilterSteps {
         int minPriceBorder = Integer.parseInt(catalog.getDriver()
                 .findElement(By.xpath(MIN_PRICE_FILTER_12000)).getText());
 
-        Waiter.getByXpath(mainPage.getDriver(),
-                MAX_PRICE_FILTER_27000);
+        Waiter.waitForElementPresentsByXpath(mainPage.getDriver(),
+                MAX_PRICE_FILTER_18000);
 
-        catalog.setFilter(MAX_PRICE_FILTER_27000);
+        catalog.setFilter(MAX_PRICE_FILTER_18000);
 
         int maxPriceBorder = Integer.parseInt(catalog.getDriver()
-                .findElement(By.xpath(MAX_PRICE_FILTER_27000)).getText());
+                .findElement(By.xpath(MAX_PRICE_FILTER_18000)).getText());
 
         int actualMinPrice = Integer.parseInt(catalog.getDriver()
                 .findElement(By.xpath(FIRST_PRODUCT_PRICE)).getText()

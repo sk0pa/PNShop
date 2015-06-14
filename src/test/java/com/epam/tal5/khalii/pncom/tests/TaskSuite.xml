@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="AllTask">
-    <test name="AssertEqualsShortAndFullDescription">
+    <test name="SortingByNameAndPriceTest">
         <classes>
-            <class name="com.epam.preproduction.tests.AssertEqualsShortAndFullDescription" />
+            <class name="com.epam.tal5.khalii.pncom.tests.SortingByNameAndPriceTest" />
         </classes>
     </test>
 
-    <test name="ComparsionOfMicrowave">
+    <test name="CompareOfMicrowave">
         <classes>
-            <class name="com.epam.preproduction.tests.ComparsionOfMicrowave" />
+            <class name="com.epam.tal5.khalii.pncom.tests.CompareOfMicrowaveTest" />
         </classes>
     </test>
 
-    <test name="VerifyBreadmakersManufacturers">
+    <test name="SortingByPrice">
         <classes>
-            <class name="com.epam.preproduction.tests.VerifyBreadmakersManufacturers" />
+            <class name="com.epam.tal5.khalii.pncom.tests.PriceFilterTest" />
         </classes>
     </test>
 
-    <test name="VerifyPriceFilter">
+    <test name="ProducersOfBreadmakers">
         <classes>
-            <class name="com.epam.preproduction.tests.VerifyPriceFilter" />
+            <class name="com.epam.tal5.khalii.pncom.tests.ProducersOfBreadmakersTest" />
         </classes>
     </test>
 
-    <test name="VerifySortingByNameAndPrice">
+    <test name="WeightFilterTest">
         <classes>
-            <class name="com.epam.preproduction.tests.VerifySortingByNameAndPrice" />
-        </classes>
-    </test>
-    <test name="VerifyWeightRegulationFilter">
-        <classes>
-            <class name="com.epam.preproduction.tests.VerifyWeightRegulationFilter" />
+            <class name="com.epam.tal5.khalii.pncom.tests.WeightFilterTest" />
         </classes>
     </test>
 
-
+    <test name="CompareShortAndFullDescriptionTest">
+        <classes>
+            <class name="com.epam.tal5.khalii.pncom.tests.CompareShortAndFullDescriptionTest" />
+        </classes>
+    </test>
 
 </suite>

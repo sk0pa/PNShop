@@ -6,7 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CompareOfMicrowave extends TestsSet {
+public class CompareOfMicrowaveTest extends TestSettings {
     SortingByNameAndPriceSteps sortSteps;
     CompareOfMicrowaveSteps compareSteps;
 

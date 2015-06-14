@@ -21,8 +21,8 @@ public class SortingByNameAndPriceSteps {
 
     public static final String ITEMS_PRICE_LIST = "//div[@class='catalog']/div[@class='item']/div[@class='price']/strong";
     public static final String ITEMS_NAME_LIST = "//div[@class='catalog']/div[@class='item']/div[@class='name']/strong";
-    public static final String TITLE = "//*[@id='page-subheader']";
-    public static final String MAIN_SEARCH_FILED = "//*[@id='edit-name-1'] ";
+    public static final String TITLE = "//div[@id='page-subheader']";
+    public static final String MAIN_SEARCH_FILED = "//input[@id='edit-name-1']";
 
 
     public SortingByNameAndPriceSteps(WebDriver driver)
@@ -39,7 +39,7 @@ public class SortingByNameAndPriceSteps {
 
         catalog = mainPage.fridgeCategory();
 
-        Waiter.getByXpath(mainPage.getDriver(), TITLE);
+        Waiter.waitForElementPresentsByXpath(mainPage.getDriver(), TITLE);
 
         assertThat(mainPage.getDriver().getTitle(), containsString("Холодильники"));
 
@@ -104,7 +104,7 @@ public class SortingByNameAndPriceSteps {
 
         assertThat(mainPage.getDriver().getTitle(), containsString("Прайс навигатор"));
 
-        Waiter.getByXpath(mainPage.getDriver(), MAIN_SEARCH_FILED);
+        Waiter.waitForElementPresentsByXpath(mainPage.getDriver(), MAIN_SEARCH_FILED);
 
         return this;
     }

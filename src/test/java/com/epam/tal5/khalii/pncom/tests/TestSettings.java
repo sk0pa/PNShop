@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class TestsSet{
+public class TestSettings {
     public WebDriver driver;
-    CompareOfMicrowave comparsionOfMicrowave ;
+    CompareOfMicrowaveTest comparsionOfMicrowave ;
     PriceFilterTest priceFilterTest ;
-    SortingByNameAndPrice sortingByNameAndPrice;
+    SortingByNameAndPriceTest sortingByNameAndPriceTest;
 
 
     @BeforeTest
@@ -24,6 +24,5 @@ public class TestsSet{
     public void afterSuite()
     {
         driver.quit();
-
     }
 }

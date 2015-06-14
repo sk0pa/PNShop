@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductInfoPage extends AbstractPage {
     public static final String PARAMETERS_LIST = "//span[@class='val']";
     public static final String LINK_TO_COMPARE = "//a[@class='head-compare-link']";
-    public static final String LINK_TO_CATALOG = "//div[@id='page-breadcrumbs']/a[3]";
+    public static final String LINK_TO_CATALOG = "//div[@id='page-breadcrumbs']/a[last()]";
 
     public List<String> parametersList;
 
@@ -38,7 +38,7 @@ public class ProductInfoPage extends AbstractPage {
         return parametersList;
     }
 
-    public ProductComparePage naivageToComaparsionPage()
+    public ProductComparePage navigateToComparePage()
     {
         compareLink.click();
         return new ProductComparePage(driver);
